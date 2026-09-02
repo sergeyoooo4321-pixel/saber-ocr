@@ -20,6 +20,10 @@ class Stroke {
   @protected
   final List<PointVector> points = [];
 
+  /// Read-only view of this stroke's raw points,
+  /// e.g. for handwriting recognition in `lib/data/ocr/`.
+  List<PointVector> get rawPoints => List.unmodifiable(points);
+
   bool get isEmpty => points.isEmpty;
   int get length => points.length;
 

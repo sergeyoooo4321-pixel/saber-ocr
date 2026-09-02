@@ -99,6 +99,8 @@ dependencies:
   worker_manager: ^7.0.1
   workmanager: ^0.10.7
 
+  google_mlkit_digital_ink_recognition: ^0.15.0
+
   archive: ^4.0.3
 
   flutter_sharing_intent: ^2.0.4

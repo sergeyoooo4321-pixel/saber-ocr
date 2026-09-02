@@ -129,6 +129,7 @@ class Translations$settings$en {
 	late final Translations$settings$prefCategories$en prefCategories = Translations$settings$prefCategories$en.internal(_root);
 	late final Translations$settings$prefLabels$en prefLabels = Translations$settings$prefLabels$en.internal(_root);
 	late final Translations$settings$prefDescriptions$en prefDescriptions = Translations$settings$prefDescriptions$en.internal(_root);
+	late final Translations$settings$ocr$en ocr = Translations$settings$ocr$en.internal(_root);
 	late final Translations$settings$themeModes$en themeModes = Translations$settings$themeModes$en.internal(_root);
 	late final Translations$settings$layoutSizes$en layoutSizes = Translations$settings$layoutSizes$en.internal(_root);
 	late final Translations$settings$accentColorPicker$en accentColorPicker = Translations$settings$accentColorPicker$en.internal(_root);
@@ -723,6 +724,9 @@ class Translations$settings$prefLabels$en {
 	/// en: 'Auto straighten lines'
 	String get autoStraightenLines => 'Auto straighten lines';
 
+	/// en: 'Handwriting recognition'
+	String get ocr => 'Handwriting recognition';
+
 	/// en: 'Custom Saber folder'
 	String get customDataDir => 'Custom Saber folder';
 
@@ -776,10 +780,49 @@ class Translations$settings$prefDescriptions$en {
 	/// en: 'Straightens long lines without having to use the shape pen'
 	String get autoStraightenLines => 'Straightens long lines without having to use the shape pen';
 
+	/// en: 'Creates a typed-text copy of each note, on-device and offline'
+	String get ocr => 'Creates a typed-text copy of each note, on-device and offline';
+
 	/// en: 'Tell me about updates as soon as they're available'
 	String get shouldAlwaysAlertForUpdates => 'Tell me about updates as soon as they\'re available';
 
 	late final Translations$settings$prefDescriptions$sentry$en sentry = Translations$settings$prefDescriptions$sentry$en.internal(_root);
+}
+
+// Path: settings.ocr
+class Translations$settings$ocr$en {
+	Translations$settings$ocr$en.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// en: 'Download recognition models'
+	String get downloadModels => 'Download recognition models';
+
+	/// en: 'Recognition models downloaded (Russian and English)'
+	String get downloaded => 'Recognition models downloaded (Russian and English)';
+
+	/// en: 'Models not downloaded yet (~20 MB each, internet needed once)'
+	String get missing => 'Models not downloaded yet (~20 MB each, internet needed once)';
+
+	/// en: 'Downloading models…'
+	String get downloading => 'Downloading models…';
+
+	/// en: 'The typed copy will update shortly'
+	String get queued => 'The typed copy will update shortly';
+
+	/// en: 'Updating the typed copy…'
+	String get processing => 'Updating the typed copy…';
+
+	/// en: 'downloaded'
+	String get modelDownloaded => 'downloaded';
+
+	/// en: 'not downloaded'
+	String get modelNotDownloaded => 'not downloaded';
+
+	/// en: 'downloading…'
+	String get modelDownloading => 'downloading…';
 }
 
 // Path: settings.themeModes

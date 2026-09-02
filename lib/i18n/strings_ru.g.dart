@@ -105,6 +105,7 @@ class _Translations$settings$ru extends Translations$settings$en {
 	@override late final _Translations$settings$prefCategories$ru prefCategories = _Translations$settings$prefCategories$ru._(_root);
 	@override late final _Translations$settings$prefLabels$ru prefLabels = _Translations$settings$prefLabels$ru._(_root);
 	@override late final _Translations$settings$prefDescriptions$ru prefDescriptions = _Translations$settings$prefDescriptions$ru._(_root);
+	@override late final _Translations$settings$ocr$ru ocr = _Translations$settings$ocr$ru._(_root);
 	@override late final _Translations$settings$themeModes$ru themeModes = _Translations$settings$themeModes$ru._(_root);
 	@override late final _Translations$settings$layoutSizes$ru layoutSizes = _Translations$settings$layoutSizes$ru._(_root);
 	@override late final _Translations$settings$accentColorPicker$ru accentColorPicker = _Translations$settings$accentColorPicker$ru._(_root);
@@ -457,6 +458,7 @@ class _Translations$settings$prefLabels$ru extends Translations$settings$prefLab
 	@override String get autosave => 'Автосохранение';
 	@override String get shapeRecognitionDelay => 'Задержка распознавания формы';
 	@override String get autoStraightenLines => 'Автоматическое выпрямление линий';
+	@override String get ocr => 'Распознавание рукописного текста';
 	@override String get customDataDir => 'Свой каталог Saber';
 	@override String get sentry => 'Сообщить об ошибке';
 }
@@ -481,8 +483,27 @@ class _Translations$settings$prefDescriptions$ru extends Translations$settings$p
 	@override String get autosave => 'Автосохранение с задержкой';
 	@override String get shapeRecognitionDelay => 'Как часто обновлять предварительный просмотр формы';
 	@override String get autoStraightenLines => 'Выпрямляет длинные линии без использования фигурного пера';
+	@override String get ocr => 'Автоматически создаёт копию заметки печатным текстом — на устройстве, работает офлайн';
 	@override String get shouldAlwaysAlertForUpdates => 'Сообщать мне об обновлениях, как только они станут доступны';
 	@override late final _Translations$settings$prefDescriptions$sentry$ru sentry = _Translations$settings$prefDescriptions$sentry$ru._(_root);
+}
+
+// Path: settings.ocr
+class _Translations$settings$ocr$ru extends Translations$settings$ocr$en {
+	_Translations$settings$ocr$ru._(TranslationsRu root) : this._root = root, super.internal(root);
+
+	final TranslationsRu _root; // ignore: unused_field
+
+	// Translations
+	@override String get downloadModels => 'Скачать модели распознавания';
+	@override String get downloaded => 'Модели распознавания скачаны (русская и английская)';
+	@override String get missing => 'Модели ещё не скачаны (~20 МБ каждая, интернет нужен один раз)';
+	@override String get downloading => 'Скачивание моделей…';
+	@override String get queued => 'Печатная копия скоро обновится';
+	@override String get processing => 'Обновление печатной копии…';
+	@override String get modelDownloaded => 'скачана';
+	@override String get modelNotDownloaded => 'не скачана';
+	@override String get modelDownloading => 'скачивается…';
 }
 
 // Path: settings.themeModes

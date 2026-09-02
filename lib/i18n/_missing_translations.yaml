@@ -4,15 +4,27 @@
 ar:
   settings:
     prefLabels:
+      ocr: Handwriting recognition
       sentry(OUTDATED): Error reporting
     prefDescriptions:
       autoDisableFingerDrawingWhenStylusDetected(OUTDATED): Turn off finger drawing when a stylus is detected
       autosave(OUTDATED): Auto-save after a short delay, or never
+      ocr: Creates a typed-text copy of each note, on-device and offline
       sentry:
         active(OUTDATED): Active
         inactive(OUTDATED): Inactive
         activeUntilRestart(OUTDATED): Active until you restart the app
         inactiveUntilRestart(OUTDATED): Inactive until you restart the app
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
     customDataDir:
       unsupported(OUTDATED): This feature is currently only for developers. Using it will likely result in data loss.
     autosaveDisabled(OUTDATED): Never
@@ -81,6 +93,7 @@ ca:
       autosave(OUTDATED): Auto-save
       shapeRecognitionDelay(OUTDATED): Shape recognition delay
       autoStraightenLines(OUTDATED): Auto straighten lines
+      ocr: Handwriting recognition
       customDataDir(OUTDATED): Custom Saber folder
       sentry(OUTDATED): Error reporting
     prefDescriptions:
@@ -100,12 +113,23 @@ ca:
       autosave(OUTDATED): Auto-save after a short delay, or never
       shapeRecognitionDelay(OUTDATED): How often to update the shape preview
       autoStraightenLines(OUTDATED): Straightens long lines without having to use the shape pen
+      ocr: Creates a typed-text copy of each note, on-device and offline
       shouldAlwaysAlertForUpdates(OUTDATED): Tell me about updates as soon as they're available
       sentry:
         active(OUTDATED): Active
         inactive(OUTDATED): Inactive
         activeUntilRestart(OUTDATED): Active until you restart the app
         inactiveUntilRestart(OUTDATED): Inactive until you restart the app
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
     themeModes:
       system(OUTDATED): System
       light(OUTDATED): Light
@@ -232,6 +256,21 @@ ca:
       lockSingleFingerPan(OUTDATED): Disable single-finger panning
       unlockAxisAlignedPan(OUTDATED): Unlock panning to horizontal or vertical
 cs:
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
 de:
   home:
     sort:
@@ -244,6 +283,21 @@ de:
       layout(OUTDATED): Layout
       masonryGrid(OUTDATED): Masonry grid
       simpleGrid(OUTDATED): Simple grid
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
 eo:
@@ -271,8 +325,20 @@ eo:
   settings:
     prefLabels:
       autoDisableFingerDrawingWhenStylusDetected(OUTDATED): Auto-disable finger drawing
+      ocr: Handwriting recognition
     prefDescriptions:
       autoDisableFingerDrawingWhenStylusDetected(OUTDATED): Turn off finger drawing when a stylus is detected
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
   editor:
@@ -295,13 +361,26 @@ es:
       masonryGrid(OUTDATED): Masonry grid
       simpleGrid(OUTDATED): Simple grid
   settings:
+    prefLabels:
+      ocr: Handwriting recognition
     prefDescriptions:
       autosave(OUTDATED): Auto-save after a short delay, or never
+      ocr: Creates a typed-text copy of each note, on-device and offline
       sentry:
         active(OUTDATED): Active
         inactive(OUTDATED): Inactive
         activeUntilRestart(OUTDATED): Active until you restart the app
         inactiveUntilRestart(OUTDATED): Inactive until you restart the app
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
     resyncEverything(OUTDATED): Resync everything
     openDataDir(OUTDATED): Open Saber folder
     customDataDir:
@@ -418,17 +497,29 @@ fa:
       autoDisableFingerDrawingWhenStylusDetected(OUTDATED): Auto-disable finger drawing
       autosave(OUTDATED): Auto-save
       autoStraightenLines(OUTDATED): Auto straighten lines
+      ocr: Handwriting recognition
       customDataDir(OUTDATED): Custom Saber folder
       sentry(OUTDATED): Error reporting
     prefDescriptions:
       autoDisableFingerDrawingWhenStylusDetected(OUTDATED): Turn off finger drawing when a stylus is detected
       autosave(OUTDATED): Auto-save after a short delay, or never
       autoStraightenLines(OUTDATED): Straightens long lines without having to use the shape pen
+      ocr: Creates a typed-text copy of each note, on-device and offline
       sentry:
         active(OUTDATED): Active
         inactive(OUTDATED): Inactive
         activeUntilRestart(OUTDATED): Active until you restart the app
         inactiveUntilRestart(OUTDATED): Inactive until you restart the app
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
     resyncEverything(OUTDATED): Resync everything
     openDataDir(OUTDATED): Open Saber folder
     customDataDir:
@@ -498,9 +589,39 @@ fa:
       watchingServer(OUTDATED): You are currently watching for updates on the server. Editing is disabled in this mode.
       corrupted(OUTDATED): Failed to load note. It may be corrupted or still being downloaded.
 fr:
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
 he:
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
 hu:
@@ -515,9 +636,39 @@ hu:
       layout(OUTDATED): Layout
       masonryGrid(OUTDATED): Masonry grid
       simpleGrid(OUTDATED): Simple grid
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
 it:
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
 ja:
@@ -536,12 +687,24 @@ ja:
     prefLabels:
       hideFingerDrawingToggle(OUTDATED): Hide the finger drawing toggle
       autoDisableFingerDrawingWhenStylusDetected(OUTDATED): Auto-disable finger drawing
+      ocr: Handwriting recognition
       customDataDir(OUTDATED): Custom Saber folder
     prefDescriptions:
       hideFingerDrawing:
         fixedOn(OUTDATED): Finger drawing is fixed as enabled
         fixedOff(OUTDATED): Finger drawing is fixed as disabled
       autoDisableFingerDrawingWhenStylusDetected(OUTDATED): Turn off finger drawing when a stylus is detected
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
     autosaveDisabled(OUTDATED): Never
     shapeRecognitionDisabled(OUTDATED): Never
   profile:
@@ -563,6 +726,21 @@ nl:
       layout(OUTDATED): Layout
       masonryGrid(OUTDATED): Masonry grid
       simpleGrid(OUTDATED): Simple grid
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
 pl:
@@ -577,6 +755,21 @@ pl:
       layout(OUTDATED): Layout
       masonryGrid(OUTDATED): Masonry grid
       simpleGrid(OUTDATED): Simple grid
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
 ru:
@@ -619,6 +812,21 @@ sl:
       layout(OUTDATED): Layout
       masonryGrid(OUTDATED): Masonry grid
       simpleGrid(OUTDATED): Simple grid
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
 th:
@@ -640,6 +848,21 @@ th:
       layout(OUTDATED): Layout
       masonryGrid(OUTDATED): Masonry grid
       simpleGrid(OUTDATED): Simple grid
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
   editor:
@@ -686,15 +909,27 @@ tr:
     prefLabels:
       autoDisableFingerDrawingWhenStylusDetected(OUTDATED): Auto-disable finger drawing
       autosave(OUTDATED): Auto-save
+      ocr: Handwriting recognition
       sentry(OUTDATED): Error reporting
     prefDescriptions:
       autoDisableFingerDrawingWhenStylusDetected(OUTDATED): Turn off finger drawing when a stylus is detected
       autosave(OUTDATED): Auto-save after a short delay, or never
+      ocr: Creates a typed-text copy of each note, on-device and offline
       sentry:
         active(OUTDATED): Active
         inactive(OUTDATED): Inactive
         activeUntilRestart(OUTDATED): Active until you restart the app
         inactiveUntilRestart(OUTDATED): Inactive until you restart the app
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
     customDataDir:
       unsupported(OUTDATED): This feature is currently only for developers. Using it will likely result in data loss.
     autosaveDisabled(OUTDATED): Never
@@ -832,6 +1067,7 @@ uk:
       autosave(OUTDATED): Auto-save
       shapeRecognitionDelay(OUTDATED): Shape recognition delay
       autoStraightenLines(OUTDATED): Auto straighten lines
+      ocr: Handwriting recognition
       customDataDir(OUTDATED): Custom Saber folder
       sentry(OUTDATED): Error reporting
     prefDescriptions:
@@ -851,12 +1087,23 @@ uk:
       autosave(OUTDATED): Auto-save after a short delay, or never
       shapeRecognitionDelay(OUTDATED): How often to update the shape preview
       autoStraightenLines(OUTDATED): Straightens long lines without having to use the shape pen
+      ocr: Creates a typed-text copy of each note, on-device and offline
       shouldAlwaysAlertForUpdates(OUTDATED): Tell me about updates as soon as they're available
       sentry:
         active(OUTDATED): Active
         inactive(OUTDATED): Inactive
         activeUntilRestart(OUTDATED): Active until you restart the app
         inactiveUntilRestart(OUTDATED): Inactive until you restart the app
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
     themeModes:
       system(OUTDATED): System
       light(OUTDATED): Light
@@ -1072,6 +1319,21 @@ vi:
       layout(OUTDATED): Layout
       masonryGrid(OUTDATED): Masonry grid
       simpleGrid(OUTDATED): Simple grid
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
 pt-BR:
@@ -1088,6 +1350,7 @@ pt-BR:
       simpleGrid(OUTDATED): Simple grid
   settings:
     prefLabels:
+      ocr: Handwriting recognition
       customDataDir(OUTDATED): Custom Saber folder
       sentry(OUTDATED): Error reporting
     prefDescriptions:
@@ -1095,11 +1358,22 @@ pt-BR:
       autosave(OUTDATED): Auto-save after a short delay, or never
       shapeRecognitionDelay(OUTDATED): How often to update the shape preview
       autoStraightenLines(OUTDATED): Straightens long lines without having to use the shape pen
+      ocr: Creates a typed-text copy of each note, on-device and offline
       sentry:
         active(OUTDATED): Active
         inactive(OUTDATED): Inactive
         activeUntilRestart(OUTDATED): Active until you restart the app
         inactiveUntilRestart(OUTDATED): Inactive until you restart the app
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
     layoutSizes:
       tablet(OUTDATED): Tablet
     resyncEverything(OUTDATED): Resync everything
@@ -1196,6 +1470,21 @@ zh-Hans-CN:
       layout(OUTDATED): Layout
       masonryGrid(OUTDATED): Masonry grid
       simpleGrid(OUTDATED): Simple grid
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used
 zh-Hant-TW:
@@ -1210,5 +1499,20 @@ zh-Hant-TW:
       layout(OUTDATED): Layout
       masonryGrid(OUTDATED): Masonry grid
       simpleGrid(OUTDATED): Simple grid
+  settings:
+    prefLabels:
+      ocr: Handwriting recognition
+    prefDescriptions:
+      ocr: Creates a typed-text copy of each note, on-device and offline
+    ocr:
+      downloadModels: Download recognition models
+      downloaded: Recognition models downloaded (Russian and English)
+      missing: Models not downloaded yet (~20 MB each, internet needed once)
+      downloading: Downloading models…
+      queued: The typed copy will update shortly
+      processing: Updating the typed copy…
+      modelDownloaded: downloaded
+      modelNotDownloaded: not downloaded
+      modelDownloading: downloading…
   profile:
     quotaUsageUncapped(OUTDATED): You're using $used

@@ -22,6 +22,7 @@ import 'package:saber/components/canvas/canvas_image.dart';
 import 'package:saber/components/canvas/image/editor_image.dart';
 import 'package:saber/components/canvas/save_indicator.dart';
 import 'package:saber/components/editor/read_only_banner.dart';
+import 'package:saber/components/home/ocr_indicator.dart';
 import 'package:saber/components/theming/adaptive_alert_dialog.dart';
 import 'package:saber/components/theming/adaptive_icon.dart';
 import 'package:saber/components/theming/dynamic_material_app.dart';
@@ -38,6 +39,7 @@ import 'package:saber/data/extensions/change_notifier_extensions.dart';
 import 'package:saber/data/extensions/matrix4_extensions.dart';
 import 'package:saber/data/file_manager/file_manager.dart';
 import 'package:saber/data/nextcloud/saber_syncer.dart';
+import 'package:saber/data/ocr/ocr_queue.dart';
 import 'package:saber/data/prefs.dart';
 import 'package:saber/data/tools/_tool.dart';
 import 'package:saber/data/tools/eraser.dart';
@@ -959,6 +961,8 @@ class EditorState extends State<Editor> {
       ]);
       savingState.value = .saved;
       history.markLastChangeAsSaved();
+      // The note changed on disk, so its printed copy needs to be refreshed.
+      unawaited(OcrQueue.enqueue(coreInfo.filePath));
     } catch (e, st) {
       log.severe('Failed to save file: $e', e, st);
       savingState.value = .waitingToSave;
@@ -1665,6 +1669,7 @@ class EditorState extends State<Editor> {
                   triggerSave: saveToFile,
                 ),
                 actions: [
+                  const OcrIndicator(),
                   IconButton(
                     icon: const AdaptiveIcon(
                       icon: Icons.insert_page_break,

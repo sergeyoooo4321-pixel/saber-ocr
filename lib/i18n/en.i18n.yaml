@@ -125,6 +125,7 @@ settings:
     autosave: Auto-save
     shapeRecognitionDelay: Shape recognition delay
     autoStraightenLines: Auto straighten lines
+    ocr: Handwriting recognition
     customDataDir: Custom Saber folder
     sentry: Error reporting
   prefDescriptions:
@@ -144,12 +145,23 @@ settings:
     autosave: Auto-save after a short delay, or never
     shapeRecognitionDelay: How often to update the shape preview
     autoStraightenLines: Straightens long lines without having to use the shape pen
+    ocr: Creates a typed-text copy of each note, on-device and offline
     shouldAlwaysAlertForUpdates: Tell me about updates as soon as they're available
     sentry:
       active: Active
       inactive: Inactive
       activeUntilRestart: Active until you restart the app
       inactiveUntilRestart: Inactive until you restart the app
+  ocr:
+    downloadModels: Download recognition models
+    downloaded: Recognition models downloaded (Russian and English)
+    missing: Models not downloaded yet (~20 MB each, internet needed once)
+    downloading: Downloading models…
+    queued: The typed copy will update shortly
+    processing: Updating the typed copy…
+    modelDownloaded: downloaded
+    modelNotDownloaded: not downloaded
+    modelDownloading: downloading…
   themeModes:
     system: System
     light: Light

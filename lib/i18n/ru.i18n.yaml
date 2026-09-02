@@ -125,6 +125,7 @@ settings:
     autosave: Автосохранение
     shapeRecognitionDelay: Задержка распознавания формы
     autoStraightenLines: Автоматическое выпрямление линий
+    ocr: Распознавание рукописного текста
     customDataDir: Свой каталог Saber
     sentry: Сообщить об ошибке
   prefDescriptions:
@@ -144,12 +145,23 @@ settings:
     autosave: Автосохранение с задержкой
     shapeRecognitionDelay: Как часто обновлять предварительный просмотр формы
     autoStraightenLines: Выпрямляет длинные линии без использования фигурного пера
+    ocr: Автоматически создаёт копию заметки печатным текстом — на устройстве, работает офлайн
     shouldAlwaysAlertForUpdates: Сообщать мне об обновлениях, как только они станут доступны
     sentry:
       active: Активно
       inactive: Неактивно
       activeUntilRestart: Активно до тех пор, пока вы не перезапустите приложение
       inactiveUntilRestart: Неактивно до тех пор, пока вы не перезапустите приложение
+  ocr:
+    downloadModels: Скачать модели распознавания
+    downloaded: Модели распознавания скачаны (русская и английская)
+    missing: Модели ещё не скачаны (~20 МБ каждая, интернет нужен один раз)
+    downloading: Скачивание моделей…
+    queued: Печатная копия скоро обновится
+    processing: Обновление печатной копии…
+    modelDownloaded: скачана
+    modelNotDownloaded: не скачана
+    modelDownloading: скачивается…
   themeModes:
     system: Системная
     light: Светлая

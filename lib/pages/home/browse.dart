@@ -13,6 +13,7 @@ import 'package:saber/components/home/masonry_files.dart';
 import 'package:saber/components/home/move_note_button.dart';
 import 'package:saber/components/home/new_note_button.dart';
 import 'package:saber/components/home/no_files.dart';
+import 'package:saber/components/home/ocr_indicator.dart';
 import 'package:saber/components/home/path_components.dart';
 import 'package:saber/components/home/rename_note_button.dart';
 import 'package:saber/components/home/sort_button.dart';
@@ -147,6 +148,7 @@ class _BrowsePageState extends State<BrowsePage> {
             actions: const [
               BrowseSortButton(),
               HomeLayoutButton(),
+              OcrIndicator(),
               SyncingButton(),
             ],
           ),

@@ -71,3 +71,22 @@ if [ -f "lib/data/sentry/_sentry_init_foss.dart" ]; then
 else
   echo "not found"
 fi
+
+# remove Google ML Kit (proprietary) dependency
+echo -n "Removing google_mlkit_digital_ink_recognition dependency: "
+if grep -q "google_mlkit_digital_ink_recognition" pubspec.yaml; then
+  echo "found"
+  sed -i -e '/google_mlkit_digital_ink_recognition/d' pubspec.yaml
+else
+  echo "already done"
+fi
+
+# swap in the FOSS stub of the OCR recognition service
+# (the only file that imports the ML Kit plugin)
+echo -n "Removing ML Kit usage from lib/data/ocr/: "
+if [ -f "lib/data/ocr/_recognition_service_foss.dart" ]; then
+  echo "found"
+  mv lib/data/ocr/_recognition_service_foss.dart lib/data/ocr/recognition_service.dart
+else
+  echo "already done"
+fi

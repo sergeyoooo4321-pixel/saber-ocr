@@ -26,6 +26,7 @@ import 'package:saber/data/file_manager/file_manager.dart';
 import 'package:saber/data/flavor_config.dart';
 import 'package:saber/data/is_this_a_test.dart';
 import 'package:saber/data/locales.dart';
+import 'package:saber/data/ocr/recognition_service.dart';
 import 'package:saber/data/prefs.dart';
 import 'package:saber/data/routes.dart';
 import 'package:saber/data/sentry/sentry_init.dart';
@@ -102,12 +103,29 @@ class _SettingsPageState extends State<SettingsPage> {
   void initState() {
     stows.locale.addListener(onChanged);
     UpdateManager.status.addListener(onChanged);
+    if (isOcrAvailable) RecognitionService.refreshModelStatus();
     super.initState();
   }
 
   void onChanged() {
     setState(() {});
   }
+
+  /// Human-readable (endonym) name of a recognition model's language,
+  /// used in the per-language model status in the OCR settings.
+  static String _languageName(String code) => switch (code) {
+    RecognitionService.russianModel => 'Русский',
+    RecognitionService.englishModel => 'English',
+    _ => code,
+  };
+
+  /// Localized label for a model's download status,
+  /// or "not downloaded" if the status hasn't been checked yet.
+  static String _modelStatusText(OcrModelStatus? status) => switch (status) {
+    .downloaded => t.settings.ocr.modelDownloaded,
+    .downloading => t.settings.ocr.modelDownloading,
+    _ => t.settings.ocr.modelNotDownloaded,
+  };
 
   // In tests, pretend the current platform is the defaultTargetPlatform
   bool get usesCupertinoByDefault =>
@@ -366,6 +384,43 @@ class _SettingsPageState extends State<SettingsPage> {
                   icon: FontAwesomeIcons.eraser,
                   pref: stows.disableEraserAfterUse,
                 ),
+                if (isOcrAvailable) ...[
+                  SettingsSwitch(
+                    title: t.settings.prefLabels.ocr,
+                    subtitle: t.settings.prefDescriptions.ocr,
+                    icon: Icons.text_fields,
+                    pref: stows.ocrEnabled,
+                  ),
+                  ValueListenableBuilder(
+                    valueListenable: RecognitionService.modelStatus,
+                    builder: (context, modelStatus, _) {
+                      final downloading = modelStatus.values.any(
+                        (status) => status == .downloading,
+                      );
+                      final allDownloaded =
+                          modelStatus.length ==
+                              RecognitionService.modelCodes.length &&
+                          modelStatus.values.every(
+                            (status) => status == .downloaded,
+                          );
+                      return SettingsButton(
+                        title: t.settings.ocr.downloadModels,
+                        subtitle: switch ((downloading, allDownloaded)) {
+                          (true, _) => t.settings.ocr.downloading,
+                          (false, true) => t.settings.ocr.downloaded,
+                          // List each language's status, then the hint
+                          // that internet is needed once (~20 MB each).
+                          (false, false) =>
+                            '${[for (final code in RecognitionService.modelCodes) '${_languageName(code)}: ${_modelStatusText(modelStatus[code])}'].join(' · ')}\n${t.settings.ocr.missing}',
+                        },
+                        icon: Icons.download,
+                        onPressed: downloading
+                            ? null
+                            : RecognitionService.downloadModels,
+                      );
+                    },
+                  ),
+                ],
                 ValueListenableBuilder(
                   valueListenable: stows.hideFingerDrawingToggle,
                   builder: (context, _, _) {

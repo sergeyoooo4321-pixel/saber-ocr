@@ -195,6 +195,14 @@ class Stows {
     false,
     volatile: !_isOnMainIsolate,
   );
+
+  /// Whether to recognize handwriting in the background (on-device)
+  /// and maintain a printed-text copy of each note.
+  final ocrEnabled = PlainStow(
+    'ocrEnabled',
+    true,
+    volatile: !_isOnMainIsolate,
+  );
   final hideFingerDrawingToggle = PlainStow(
     'hideFingerDrawingToggle',
     false,

@@ -20,6 +20,7 @@ import 'package:saber/data/file_manager/file_manager.dart';
 import 'package:saber/data/flavor_config.dart';
 import 'package:saber/data/nextcloud/nc_http_overrides.dart';
 import 'package:saber/data/nextcloud/saber_syncer.dart';
+import 'package:saber/data/ocr/ocr_queue.dart';
 import 'package:saber/data/prefs.dart';
 import 'package:saber/data/routes.dart';
 import 'package:saber/data/sentry/sentry_init.dart';
@@ -122,6 +123,10 @@ Future<void> appRunner(List<String> args) async {
   runApp(SentryWidget(child: TranslationProvider(child: const App())));
   startSyncAfterLoaded();
   setupBackgroundSync();
+  setupBackgroundOcr();
+  // Pick up notes that were saved while the app couldn't recognize them
+  // (e.g. closed or offline), and start the foreground OCR worker.
+  unawaited(OcrQueue.init());
 }
 
 void startSyncAfterLoaded() async {
@@ -191,9 +196,69 @@ void setupBackgroundSync() {
     );
 }
 
+/// Registers the workmanager task that processes the OCR queue
+/// while the app is closed. See [doBackgroundOcr].
+void setupBackgroundOcr() {
+  if (!Platform.isAndroid && !Platform.isIOS) return;
+  if (!stows.ocrEnabled.loaded) {
+    return stows.ocrEnabled.addListener(setupBackgroundOcr);
+  } else {
+    stows.ocrEnabled.removeListener(setupBackgroundOcr);
+  }
+  if (!stows.ocrEnabled.value) return;
+
+  Workmanager().initialize(doBackgroundSync);
+
+  // Handwriting recognition runs on-device, so unlike the sync task
+  // it doesn't need a network connection.
+  final constraints = Constraints(
+    requiresBatteryNotLow: true,
+    requiresStorageNotLow: true,
+  );
+  if (Platform.isAndroid)
+    Workmanager().registerPeriodicTask(
+      ocrBackgroundTaskName,
+      ocrBackgroundTaskName,
+      frequency: const Duration(hours: 6),
+      initialDelay: const Duration(hours: 1),
+      constraints: constraints,
+    );
+  else if (Platform.isIOS)
+    Workmanager().registerOneOffTask(
+      ocrBackgroundTaskName,
+      ocrBackgroundTaskName,
+      initialDelay: const Duration(hours: 1),
+      constraints: constraints,
+    );
+}
+
+/// The name of the workmanager task that processes the OCR queue
+/// while the app is closed. See [doBackgroundOcr].
+const ocrBackgroundTaskName = 'ocr-background';
+
+/// Processes the OCR queue in the background.
+/// Called by [doBackgroundSync]'s task dispatcher.
+Future<bool> doBackgroundOcr() async {
+  FlavorConfig.setupFromEnvironment();
+  StrokeOptionsExtension.setDefaults();
+  Editor.canRasterPdf = false;
+
+  await Future.wait([
+    FileManager.init(shouldWatchRootDirectory: false),
+    // Needed by EditorCoreInfo.loadFromFilePath to parse notes >2 MB,
+    // same as in the sync task above. Recognition itself always runs
+    // on this isolate since the ML Kit platform channel requires it.
+    workerManager.init(isolatesCount: 1),
+  ]);
+  await OcrQueue.processAll();
+  return true;
+}
+
 @pragma('vm:entry-point')
 void doBackgroundSync() {
-  Workmanager().executeTask((_, _) async {
+  Workmanager().executeTask((task, _) async {
+    if (task == ocrBackgroundTaskName) return doBackgroundOcr();
+
     FlavorConfig.setupFromEnvironment();
     StrokeOptionsExtension.setDefaults();
     Editor.canRasterPdf = false;
