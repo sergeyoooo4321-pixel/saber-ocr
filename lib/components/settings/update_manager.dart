@@ -16,10 +16,10 @@ abstract class UpdateManager {
   static final log = Logger('UpdateManager');
 
   static final Uri versionUrl = Uri.parse(
-    'https://raw.githubusercontent.com/saber-notes/saber/main/lib/data/version.dart',
+    'https://raw.githubusercontent.com/sergeyoooo4321-pixel/saber-ocr/main/lib/data/version.dart',
   );
   static final Uri apiUrl = Uri.parse(
-    'https://api.github.com/repos/saber-notes/saber/releases/latest',
+    'https://api.github.com/repos/sergeyoooo4321-pixel/saber-ocr/releases/latest',
   );
 
   /// The availability of an update.

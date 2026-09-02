@@ -91,9 +91,9 @@ jobs:
         run: |
           buildName=$(grep -oP "(?<=buildName = ').*(?=')" lib/data/version.dart)
           if [ "${{ matrix.foss }}" = "true" ]; then
-            apkName="Saber_FOSS_v${buildName}.apk"
+            apkName="Tetradka_FOSS_v${buildName}.apk"
           else
-            apkName="Saber_v${buildName}.apk"
+            apkName="Tetradka_v${buildName}.apk"
           fi
           echo "apkName=$apkName" >> $GITHUB_OUTPUT
 
@@ -103,7 +103,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v7
         with:
-          name: ${{ matrix.foss && 'Saber-Android-FOSS' || 'Saber-Android' }}
+          name: ${{ matrix.foss && 'Tetradka-Android-FOSS' || 'Tetradka-Android' }}
           path: output/${{ steps.rename_apk.outputs.apkName }}
 
       - name: Upload to GitHub release
@@ -122,14 +122,14 @@ jobs:
             --dart-define=UPDATE_CHECK="false"
 
           mkdir -p output
-          mv build/app/outputs/bundle/release/app-release.aab output/Saber.aab
+          mv build/app/outputs/bundle/release/app-release.aab output/Tetradka.aab
 
       - name: Upload artifact
         if: ${{ matrix.foss == false }}
         uses: actions/upload-artifact@v7
         with:
-          name: Saber-Android-PlayStore
-          path: output/Saber.aab
+          name: Tetradka-Android-PlayStore
+          path: output/Tetradka.aab
 
   upload-to-play-store:
     name: Upload to Play Store
@@ -146,7 +146,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v8
         with:
-          name: Saber-Android-PlayStore
+          name: Tetradka-Android-PlayStore
           path: output
 
       - name: Prepare whatsnew directory from metadata/*/changelogs
@@ -180,8 +180,8 @@ jobs:
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJsonPlainText: ${{ secrets.PLAY_STORE_JSON }}
-          packageName: com.adilhanney.saber
-          releaseFiles: output/Saber.aab
+          packageName: com.tetradka.app
+          releaseFiles: output/Tetradka.aab
           track: production
           status: completed
           whatsNewDirectory: whatsnew
