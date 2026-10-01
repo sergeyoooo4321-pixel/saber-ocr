@@ -39,7 +39,7 @@ dependencies:
   sbn:
     path: packages/sbn
 
-  dynamic_color: ^1.5.4
+  dynamic_color: ^2.1.0
 
   flutter_staggered_grid_view: ^0.7.0
 
@@ -50,7 +50,7 @@ dependencies:
 
   path_provider: ^2.0.11
 
-  flutter_secure_storage: ^11.0.0
+  flutter_secure_storage: ^11.2.0
 
   url_launcher: ^6.1.8
 
@@ -58,7 +58,7 @@ dependencies:
 
   collapsible: ^1.0.0
 
-  vector_math: ^2.1.2
+  vector_math: ^2.4.3
 
   intl: any
 
@@ -71,15 +71,15 @@ dependencies:
 
   pdf: ^3.8.4
   share_plus: ^13.3.0
-  file_picker: ^12.0.0
-  android_file_picker:
+  file_picker: ^12.3.0
+  android_file_picker: 1.1.1
 
   regexed_validator: ^2.0.0+1
 
-  slang: ^4.12.1
+  slang: ^4.19.2
   slang_flutter:
 
-  flex_color_picker: ^3.4.1
+  flex_color_picker: ^4.0.0
 
   font_awesome_flutter: ^11.0.0
 
@@ -87,19 +87,19 @@ dependencies:
 
   defer_pointer: ^0.0.2
 
-  permission_handler: ^13.0.0
+  permission_handler: ^13.0.2
   saver_gallery: ^5.1.0
 
-  animations: ^2.0.7
+  animations: ^3.0.0
 
-  flutter_quill: ^11.5.1
+  flutter_quill: ^11.6.0
 
   window_manager: ^0.5.1
 
   worker_manager: ^7.0.1
-  workmanager: ^0.10.7
+  workmanager: ^0.10.10
 
-  google_mlkit_digital_ink_recognition: ^0.15.0
+  google_mlkit_digital_ink_recognition: ^0.16.1
 
   archive: ^4.0.3
 
@@ -146,7 +146,7 @@ dependencies:
 
   flutter_web_auth_2: ^5.0.1
 
-  pdfrx: ^2.4.2
+  pdfrx: ^2.6.5
   path: ^1.9.1
 
   stow: ^0.6.0
@@ -154,15 +154,15 @@ dependencies:
   stow_secure: ^0.7.0
   stow_codecs: ^1.4.0
 
-  sentry_flutter: ^9.21.0
+  sentry_flutter: ^9.30.1
   sentry_logging: ^9.5.0
 
   background_downloader: ^9.2.6
 
   flutter_hooks: ^0.21.3+1
   dynamic_yaru: ^0.2.0
-  image: ^4.8.0
-  pool: ^1.5.2
+  image: ^4.10.1
+  pool: ^1.5.3
 
 dev_dependencies:
   flutter_test:
@@ -179,9 +179,9 @@ dev_dependencies:
 
   icons_launcher: ^3.0.0
 
-  yaml: ^3.1.2
+  yaml: ^3.1.4
 
-  golden_screenshot: ^11.0.1
+  golden_screenshot: ^12.1.0
 
   sentry_dart_plugin: ^3.1.1
 
